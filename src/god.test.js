@@ -2,7 +2,12 @@ const { God } = require("./god");
 const { Cell } = require("./cell");
 
 describe("the god behavior", () => {
-  it("says that three neighbour alive cells die because of overpopulation", () => {
+
+  it("each cell with one or no neighbors dies, as if by solitude.", () => {
+
+  });
+
+  it("each cell with four or more neighbors dies, as if by overpopulation.", () => {
     const god = new God();
     const aCell = Cell.born();
     expect(aCell.isAlive()).toBeTruthy();
@@ -10,11 +15,18 @@ describe("the god behavior", () => {
       aCell,
       aCell.mitosis(),
       aCell.mitosis(),
+      aCell.mitosis(),
       aCell.mitosis()
+
     );
 
     god.mutateGeneration(world);
 
     expect(aCell.isAlive()).toBeFalsy();
   });
+
+  it("each cell with two or three neighbors survives.", () => {
+
+  });
+
 });
