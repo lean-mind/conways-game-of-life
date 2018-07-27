@@ -1,3 +1,5 @@
+const { World } = require("./world");
+
 class God {
   constructor() {}
 
@@ -7,6 +9,10 @@ class God {
   }
 
   mutateGeneration(world) {}
+
+  createWorld(ejeAbscisas, ejeOrdenadas) {
+    return new World(ejeAbscisas, ejeOrdenadas)
+  }
 }
 
 module.exports = {

@@ -1,5 +1,7 @@
+const { God } = require('./god')
 const { World } = require('./world')
 const { Empty } = require('./empty')
+const { Cell } = require('./cell')
 
 describe("the world behavior", () => {
   describe("the creation", () => {
@@ -30,4 +32,17 @@ describe("the world behavior", () => {
       ])*/
     });
   });
+
+  it("creates a cell on given coords", () => {
+    const god = new God();
+    const coords = {x: 10, y: 10};
+    const aCell = Cell.born();
+    const world = god.createWorld(20, 20);
+
+    world.addCell(aCell, coords);
+
+    expect(world.hasCell(coords)).toBeTruthy();
+    expect(world.hasCell({x: 15, y: 15})).toBeFalsy();
+  });
+
 });

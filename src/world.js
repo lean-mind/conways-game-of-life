@@ -1,4 +1,5 @@
 const { Empty } = require("./empty");
+const { Cell } = require("./cell");
 
 class World {
   constructor(ejeAbscisas, ejeOrdenadas) {
@@ -13,11 +14,21 @@ class World {
   }
 
   filler() {
-    this.world = [[new Cell(), new Cell()], [new Cell(), new Cell()]];
+    this.world = [
+                    [new Cell(), new Cell()], [new Cell(), new Cell()]
+                ];
   }
 
   getSnapshot() {
     return this.world;
+  }
+
+  hasCell(coords) {
+    return this.world[coords.x][coords.y] instanceof Cell;
+  }
+
+  addCell(aCell, coords) {
+    this.world[coords.x][coords.y] = aCell;
   }
 }
 

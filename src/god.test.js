@@ -1,6 +1,10 @@
 const { God } = require("./god");
 const { Cell } = require("./cell");
 
+// TODO
+// - controlar el tamaño del mundo al crear las células
+
+
 describe("the god behavior", () => {
   it("says that three neighbour alive cells die because of overpopulation", () => {
     const god = new God();
@@ -17,4 +21,5 @@ describe("the god behavior", () => {
 
     expect(aCell.isAlive()).toBeFalsy();
   });
+
 });
