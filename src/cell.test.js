@@ -19,4 +19,34 @@ describe("the cell behavior", () => {
     cell.revive();
     expect(cell.isAlive()).toBe(true);
   });
+  it("with too much mitosis it dies", () => {
+    const cell = new Cell();
+
+    cell.mitosis()
+    cell.mitosis()
+    cell.mitosis()
+    cell.mitosis()
+    expect(cell.iWillBeAlive()).toBe(false);
+  });
+  it("with too low mitosis it dies", () => {
+    const cell = new Cell();
+
+    cell.mitosis()
+    expect(cell.iWillBeAlive()).toBe(false);
+  });
+  it("with a balanced mitosis it dies", () => {
+    const cell = new Cell();
+
+    cell.mitosis()
+    cell.mitosis()
+    expect(cell.iWillBeAlive()).toBe(true);
+  });
+  it("with dead neighbours it dies", () => {
+    const cell = new Cell();
+
+    cell.mitosis()
+    cell.mitosis().kill()
+
+    expect(cell.iWillBeAlive()).toBe(false);
+  });
 });
