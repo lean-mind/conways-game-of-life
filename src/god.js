@@ -10,14 +10,15 @@ class God {
 
   createWorld() {
     return [
-      [new Cell(), new Cell(), new Cell(), new Cell()],
-      [new Cell(), new Cell(), new Cell(), new Cell()],
-      [new Cell(), new Cell(), new Cell(), new Cell()],
-      [new Cell(), new Cell(), new Cell(), new Cell()]
+      [new Cell(), new Cell(), new Cell()],
+      [new Cell(), new Cell(), new Cell()],
+      [new Cell(), new Cell(), new Cell()]
     ]
   }
 
-  mutateGeneration(world) {}
+  mutateGeneration(world) {
+
+  }
 }
 
 module.exports = {
