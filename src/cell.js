@@ -16,13 +16,7 @@ class Cell {
     this.alive = true;
   }
 
-  mitosis() {
-    const newCell = new Cell()
-    this.neighborhood.push(newCell)
-    return newCell;
-  }
-
-  iWillBeAlive () {
+  willISurvive () {
     let aliveNeighbours = 0
 
     this.neighborhood.forEach(cell => {

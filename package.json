@@ -11,5 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^23.3.0"
+  },
+  "jest": {
+    "testEnvironment":"node",
+    "testURL": "http://localhost"
   }
 }
